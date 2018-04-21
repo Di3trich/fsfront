@@ -1,3 +1,19 @@
-<p>
-    lista-que-hacer works!
-</p>
+<section>
+    <header>
+        <h1>Que Haceres</h1>
+        <input [(ngModel)]="titulo" placeholder="¿Que se necesita hacer hoy?" autofocus=""
+               (keyup.enter)="agregarQueHacer()">
+    </header>
+    <section>
+        <ul>
+            <li *ngFor="let queHacer of queHaceres">
+                <div>
+                    {{ queHacer.titulo }}
+                </div>
+            </li>
+        </ul>
+    </section>
+    <footer>
+        Tenemos {{ queHaceres.length }} cosas por hacer en total.
+    </footer>
+</section>
