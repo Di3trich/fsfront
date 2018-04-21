@@ -26,6 +26,13 @@ export class ListaQueHacerComponent implements OnInit {
         }
     }
 
+    quitarQueHacer(elemento: QueHacer) {
+        const indice = this.queHaceres.indexOf(elemento);
+        if (indice !== -1) {
+            this.queHaceres.splice(indice, 1);
+        }
+    }
+
     contarHechas(): number {
         let total = 0;
         this.queHaceres.forEach(elemento => {
