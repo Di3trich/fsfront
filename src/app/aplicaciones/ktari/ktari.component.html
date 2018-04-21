@@ -1,0 +1,21 @@
+<section>
+    <header>
+        <h1>Cambia color</h1>
+        <input [(ngModel)]="color" placeholder="ingrese color" autofocus=""
+               (keyup.enter)="cambiarColor('entrada1')" style="background: white;" id="entrada1" style="">
+    </header><br>   
+    <!--section>
+        <ul>
+            <li *ngFor="let queHacer of queHaceres">
+                <div>
+                    <input type="checkbox" [(ngModel)]="queHacer.completado">
+                    {{ queHacer.titulo }}
+                    <button (click)="quitarQueHacer(queHacer)">x</button>
+                </div>
+            </li>
+        </ul>
+    </section >
+    <footer>
+        Tenemos {{ queHaceres.length }} cosas por hacer en total y {{ contarHechas() }} están completadas.
+    </footer -->
+</section>
