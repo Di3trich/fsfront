@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {QueHacer} from './modelos/que-hacer';
+import {forEach} from '@angular/router/src/utils/collection';
 
 @Component({
     selector: 'app-lista-que-hacer',
@@ -23,6 +24,16 @@ export class ListaQueHacerComponent implements OnInit {
             this.queHaceres.push(new QueHacer(this.titulo, false));
             this.titulo = '';
         }
+    }
+
+    contarHechas(): number {
+        let total = 0;
+        this.queHaceres.forEach(elemento => {
+            if (elemento.completado) {
+                total++;
+            }
+        });
+        return total;
     }
 
 }

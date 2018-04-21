@@ -8,12 +8,13 @@
         <ul>
             <li *ngFor="let queHacer of queHaceres">
                 <div>
+                    <input type="checkbox" [(ngModel)]="queHacer.completado">
                     {{ queHacer.titulo }}
                 </div>
             </li>
         </ul>
     </section>
     <footer>
-        Tenemos {{ queHaceres.length }} cosas por hacer en total.
+        Tenemos {{ queHaceres.length }} cosas por hacer en total y {{ contarHechas() }} están completadas.
     </footer>
 </section>
