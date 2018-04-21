@@ -6,10 +6,12 @@ import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {ListaAplicacionesComponent} from './lista-aplicaciones/lista-aplicaciones.component';
 import {ListaQueHacerComponent} from './aplicaciones/lista-que-hacer/lista-que-hacer.component';
+import { BenildaComponent } from './aplicaciones/benilda/benilda.component';
 
 
 const rutasAplicacion: Routes = [
     {path: 'quehacer', component: ListaQueHacerComponent},
+    {path: 'benilda', component: BenildaComponent},
     {path: '', component: ListaAplicacionesComponent}
 ];
 
@@ -17,7 +19,8 @@ const rutasAplicacion: Routes = [
     declarations: [
         AppComponent,
         ListaAplicacionesComponent,
-        ListaQueHacerComponent
+        ListaQueHacerComponent,
+        BenildaComponent
     ],
     imports: [
         BrowserModule,
