@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Grupo} from '../../interfaces/api';
+import {Grupo, QueHacer} from '../../interfaces/api';
 import {GrupoService} from '../../servicios/grupo.service';
 
 @Component({
@@ -10,11 +10,11 @@ import {GrupoService} from '../../servicios/grupo.service';
 export class GrupoListaQueHacerComponent implements OnInit {
     listaGrupos: Grupo[];
 
-    constructor(private grupo: GrupoService) {
+    constructor(private grupoService: GrupoService) {
     }
 
     ngOnInit() {
-        this.grupo.getListaGrupos().subscribe(grupos => {
+        this.grupoService.getListaGrupos().subscribe(grupos => {
             this.listaGrupos = grupos;
         });
     }

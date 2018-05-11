@@ -6,7 +6,8 @@ export interface Grupo {
 }
 
 export interface QueHacer {
-    url: string;
+    url?: string;
+    grupo: string;
     tarea: string;
     realizado: boolean;
 }

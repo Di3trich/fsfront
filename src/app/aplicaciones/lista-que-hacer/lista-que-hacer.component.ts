@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {QueHacer} from './modelos/que-hacer';
-import {Grupo} from '../../interfaces/api';
+import {Grupo, QueHacer} from '../../interfaces/api';
 import {GrupoService} from '../../servicios/grupo.service';
+import {QueHacerService} from '../../servicios/que-hacer.service';
 
 @Component({
     selector: 'app-lista-que-hacer',
@@ -10,14 +10,24 @@ import {GrupoService} from '../../servicios/grupo.service';
 })
 export class ListaQueHacerComponent implements OnInit {
     @Input() grupo: Grupo;
+    nuevoQueHacer: QueHacer;
 
-    constructor(private grupoService: GrupoService) {
+    constructor(private grupoService: GrupoService, private quehacerService: QueHacerService) {
     }
 
     ngOnInit() {
+        this.nuevoQueHacer = {
+            grupo: this.grupo.url,
+            tarea: '',
+            realizado: false
+        };
     }
 
     agregarQueHacer() {
+        this.quehacerService.setQueHacer(this.nuevoQueHacer).subscribe(quehacer => {
+            this.grupo.quehacer_set.push(quehacer);
+            this.nuevoQueHacer.tarea = '';
+        });
     }
 
     contarHechas(): number {

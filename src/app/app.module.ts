@@ -9,6 +9,7 @@ import {ListaAplicacionesComponent} from './lista-aplicaciones/lista-aplicacione
 import {ListaQueHacerComponent} from './aplicaciones/lista-que-hacer/lista-que-hacer.component';
 import {GrupoService} from './servicios/grupo.service';
 import {GrupoListaQueHacerComponent} from './aplicaciones/grupo-lista-que-hacer/grupo-lista-que-hacer.component';
+import {QueHacerService} from './servicios/que-hacer.service';
 
 
 const rutasAplicacion: Routes = [
@@ -29,7 +30,7 @@ const rutasAplicacion: Routes = [
         FormsModule,
         RouterModule.forRoot(rutasAplicacion)
     ],
-    providers: [GrupoService],
+    providers: [GrupoService, QueHacerService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
