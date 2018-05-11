@@ -1,8 +1,3 @@
 <div *ngFor="let grupo of listaGrupos">
-    <div>{{ grupo.nombre }}</div>
-    <ul>
-        <li *ngFor="let quehacer of grupo.quehacer_set">
-            {{ quehacer.tarea }}
-        </li>
-    </ul>
+    <app-lista-que-hacer [grupo]="grupo"></app-lista-que-hacer>
 </div>

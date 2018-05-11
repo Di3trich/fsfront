@@ -1,21 +1,17 @@
 <section>
     <header>
-        <h1>Que Haceres</h1>
-        <input [(ngModel)]="titulo" placeholder="¿Que se necesita hacer hoy?" autofocus=""
-               (keyup.enter)="agregarQueHacer()">
+        <h1>{{ grupo.nombre }}</h1>
     </header>
     <section>
         <ul>
-            <li *ngFor="let queHacer of queHaceres">
+            <li *ngFor="let quehacer of grupo.quehacer_set">
                 <div>
-                    <input type="checkbox" [(ngModel)]="queHacer.completado">
-                    {{ queHacer.titulo }}
-                    <button (click)="quitarQueHacer(queHacer)">x</button>
+                    {{ quehacer.tarea }}
                 </div>
             </li>
         </ul>
     </section>
     <footer>
-        Tenemos {{ queHaceres.length }} cosas por hacer en total y {{ contarHechas() }} están completadas.
+        Tenemos {{ grupo.quehacer_set.length }} cosas por hacer en total y {{ contarHechas() }} están completadas.
     </footer>
 </section>

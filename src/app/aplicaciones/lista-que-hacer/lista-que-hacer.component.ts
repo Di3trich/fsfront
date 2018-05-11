@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {QueHacer} from './modelos/que-hacer';
-import {forEach} from '@angular/router/src/utils/collection';
+import {Grupo} from '../../interfaces/api';
+import {GrupoService} from '../../servicios/grupo.service';
 
 @Component({
     selector: 'app-lista-que-hacer',
@@ -8,39 +9,24 @@ import {forEach} from '@angular/router/src/utils/collection';
     styleUrls: ['./lista-que-hacer.component.css']
 })
 export class ListaQueHacerComponent implements OnInit {
-    queHaceres: QueHacer[];
-    titulo: string;
+    @Input() grupo: Grupo;
 
-    constructor() {
-        this.queHaceres = [];
-        this.titulo = '';
+    constructor(private grupoService: GrupoService) {
     }
 
     ngOnInit() {
     }
 
     agregarQueHacer() {
-        if (this.titulo !== '') {
-            this.queHaceres.push(new QueHacer(this.titulo, false));
-            this.titulo = '';
-        }
-    }
-
-    quitarQueHacer(elemento: QueHacer) {
-        const indice = this.queHaceres.indexOf(elemento);
-        if (indice !== -1) {
-            this.queHaceres.splice(indice, 1);
-        }
     }
 
     contarHechas(): number {
         let total = 0;
-        this.queHaceres.forEach(elemento => {
-            if (elemento.completado) {
+        this.grupo.quehacer_set.forEach(elemento => {
+            if (elemento.realizado) {
                 total++;
             }
         });
         return total;
     }
-
 }
