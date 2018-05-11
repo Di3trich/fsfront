@@ -17,4 +17,8 @@ export class QueHacerService {
     eliminarQueHacer(idUrl: string) {
         return this.http.delete(idUrl);
     }
+
+    actualizarQueHacer(quehacer: QueHacer) {
+        return this.http.patch<QueHacer>(quehacer.url, quehacer);
+    }
 }

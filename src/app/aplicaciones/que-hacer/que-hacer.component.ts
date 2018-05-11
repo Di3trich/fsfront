@@ -9,7 +9,7 @@ import {QueHacer} from '../../interfaces/api';
 })
 export class QueHacerComponent implements OnInit {
     @Input() quehacer: QueHacer;
-    @Output() onEliminar = new EventEmitter<void>();
+    @Output() actualizado = new EventEmitter<void>();
 
     constructor(private quehacerService: QueHacerService) {
     }
@@ -19,8 +19,18 @@ export class QueHacerComponent implements OnInit {
 
     eliminarQueHacer() {
         this.quehacerService.eliminarQueHacer(this.quehacer.url).subscribe(() => {
-            this.onEliminar.emit();
+            this.actualizado.emit();
+        }, error => {
+            this.actualizado.emit();
         });
     }
 
+    cambiarRealizado() {
+        this.quehacer.realizado = !this.quehacer.realizado;
+        this.quehacerService.actualizarQueHacer(this.quehacer).subscribe(quehacer => {
+            this.actualizado.emit();
+        }, error => {
+            this.actualizado.emit();
+        });
+    }
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Grupo, QueHacer} from '../../interfaces/api';
 import {GrupoService} from '../../servicios/grupo.service';
 import {QueHacerService} from '../../servicios/que-hacer.service';
@@ -10,6 +10,7 @@ import {QueHacerService} from '../../servicios/que-hacer.service';
 })
 export class ListaQueHacerComponent implements OnInit {
     @Input() grupo: Grupo;
+    @Output() actualizado = new EventEmitter<void>();
     nuevoQueHacer: QueHacer;
 
     constructor(private grupoService: GrupoService, private quehacerService: QueHacerService) {
@@ -31,9 +32,7 @@ export class ListaQueHacerComponent implements OnInit {
     }
 
     actualizarGrupo() {
-        this.grupoService.getGrupo(this.grupo.url).subscribe(grupo => {
-            this.grupo = grupo;
-        });
+        this.actualizado.emit();
     }
 
     contarHechas(): number {

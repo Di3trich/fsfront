@@ -14,6 +14,10 @@ export class GrupoListaQueHacerComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.cargarListaGrupos();
+    }
+
+    cargarListaGrupos() {
         this.grupoService.getListaGrupos().subscribe(grupos => {
             this.listaGrupos = grupos;
         });
