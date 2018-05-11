@@ -13,4 +13,8 @@ export class GrupoService {
     getListaGrupos() {
         return this.http.get<Grupo[]>(this.apiUrl);
     }
+
+    getGrupo(idUrl: string) {
+        return this.http.get<Grupo>(idUrl);
+    }
 }

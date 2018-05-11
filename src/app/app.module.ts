@@ -10,6 +10,7 @@ import {ListaQueHacerComponent} from './aplicaciones/lista-que-hacer/lista-que-h
 import {GrupoService} from './servicios/grupo.service';
 import {GrupoListaQueHacerComponent} from './aplicaciones/grupo-lista-que-hacer/grupo-lista-que-hacer.component';
 import {QueHacerService} from './servicios/que-hacer.service';
+import { QueHacerComponent } from './aplicaciones/que-hacer/que-hacer.component';
 
 
 const rutasAplicacion: Routes = [
@@ -22,7 +23,8 @@ const rutasAplicacion: Routes = [
         AppComponent,
         ListaAplicacionesComponent,
         ListaQueHacerComponent,
-        GrupoListaQueHacerComponent
+        GrupoListaQueHacerComponent,
+        QueHacerComponent
     ],
     imports: [
         BrowserModule,

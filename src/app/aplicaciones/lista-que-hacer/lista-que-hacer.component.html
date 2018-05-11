@@ -7,9 +7,7 @@
     <section>
         <ul>
             <li *ngFor="let quehacer of grupo.quehacer_set">
-                <div>
-                    {{ quehacer.tarea }}
-                </div>
+                <app-que-hacer [quehacer]="quehacer" (onEliminar)="actualizarGrupo()"></app-que-hacer>
             </li>
         </ul>
     </section>

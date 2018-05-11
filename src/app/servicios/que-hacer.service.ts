@@ -13,4 +13,8 @@ export class QueHacerService {
     setQueHacer(quehacer: QueHacer) {
         return this.http.post<QueHacer>(this.apiUrl, quehacer);
     }
+
+    eliminarQueHacer(idUrl: string) {
+        return this.http.delete(idUrl);
+    }
 }

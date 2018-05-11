@@ -25,8 +25,14 @@ export class ListaQueHacerComponent implements OnInit {
 
     agregarQueHacer() {
         this.quehacerService.setQueHacer(this.nuevoQueHacer).subscribe(quehacer => {
-            this.grupo.quehacer_set.push(quehacer);
             this.nuevoQueHacer.tarea = '';
+            this.actualizarGrupo();
+        });
+    }
+
+    actualizarGrupo() {
+        this.grupoService.getGrupo(this.grupo.url).subscribe(grupo => {
+            this.grupo = grupo;
         });
     }
 
