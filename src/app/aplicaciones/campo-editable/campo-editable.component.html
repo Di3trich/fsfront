@@ -1,0 +1,9 @@
+<span *ngIf="!editar">
+    {{ original }}
+    <button (click)="editar=true">&#9997;</button>
+</span>
+<span *ngIf="editar">
+    <input [(ngModel)]="temporal" autofocus="" (keyup.enter)="cambiar()" (keyup.escape)="cancelar()"/>
+    <button (click)="cambiar()">&#10003;</button>
+    <button (click)="cancelar()">&#10005;</button>
+</span>

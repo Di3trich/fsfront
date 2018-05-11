@@ -33,4 +33,13 @@ export class QueHacerComponent implements OnInit {
             this.actualizado.emit();
         });
     }
+
+    tareaCambiada(texto: string) {
+        this.quehacer.tarea = texto;
+        this.quehacerService.actualizarQueHacer(this.quehacer).subscribe(quehacer => {
+            this.actualizado.emit();
+        }, error => {
+            this.actualizado.emit();
+        });
+    }
 }
