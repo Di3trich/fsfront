@@ -1,0 +1,7 @@
+<span *ngIf="confirmar">
+    <button (click)="eventoConfirmar()" class="confirmar">&#10003;</button>
+    <button (click)="confirmar=false" class="cancelar">&#10005;</button>
+</span>
+<button *ngIf="!confirmar" (click)="confirmar=true">
+    <ng-content></ng-content>
+</button>

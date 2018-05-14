@@ -1,0 +1,11 @@
+.confirmar, .cancelar {
+    font-weight: bold;
+}
+
+.confirmar {
+    color: green;
+}
+
+.cancelar {
+    color: red;
+}

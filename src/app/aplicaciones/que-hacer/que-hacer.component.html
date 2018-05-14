@@ -1,3 +1,3 @@
 <input type="checkbox" [checked]="quehacer.realizado" (click)="cambiarRealizado()">
 <app-campo-editable [original]="quehacer.tarea" (actualizado)="tareaCambiada($event)"></app-campo-editable>
-<button (click)="eliminarQueHacer()">x</button>
+<app-boton-confirmacion (accion)="eliminarQueHacer()">&#10005;</app-boton-confirmacion>

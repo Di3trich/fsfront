@@ -12,6 +12,7 @@ import {GrupoListaQueHacerComponent} from './aplicaciones/grupo-lista-que-hacer/
 import {QueHacerService} from './servicios/que-hacer.service';
 import { QueHacerComponent } from './aplicaciones/que-hacer/que-hacer.component';
 import { CampoEditableComponent } from './aplicaciones/campo-editable/campo-editable.component';
+import { BotonConfirmacionComponent } from './aplicaciones/boton-confirmacion/boton-confirmacion.component';
 
 
 const rutasAplicacion: Routes = [
@@ -26,7 +27,8 @@ const rutasAplicacion: Routes = [
         ListaQueHacerComponent,
         GrupoListaQueHacerComponent,
         QueHacerComponent,
-        CampoEditableComponent
+        CampoEditableComponent,
+        BotonConfirmacionComponent
     ],
     imports: [
         BrowserModule,
