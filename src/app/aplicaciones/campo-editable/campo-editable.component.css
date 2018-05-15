@@ -1,0 +1,15 @@
+:host {
+    flex: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.contenedor-flex-row {
+    flex: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.contenido-flex {
+    flex: auto;
+}

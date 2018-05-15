@@ -1,3 +1,4 @@
-<div *ngFor="let grupo of listaGrupos">
-    <app-lista-que-hacer [grupo]="grupo" (actualizado)="cargarListaGrupos()"></app-lista-que-hacer>
+<div *ngFor="let grupo of listaGrupos" class="lista-grupos">
+    <app-lista-que-hacer class="grupo" [grupo]="grupo" (actualizado)="cargarListaGrupos()">
+    </app-lista-que-hacer>
 </div>

@@ -1,0 +1,33 @@
+:host {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.lista-grupos {
+    margin: 0 auto;
+}
+
+@media only screen {
+    .lista-grupos {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .lista-grupos {
+        width: 75%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .lista-grupos {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .lista-grupos {
+        width: 100%;
+    }
+}

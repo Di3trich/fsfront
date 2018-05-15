@@ -1,7 +1,7 @@
 <section>
     <header>
         <h1>{{ grupo.nombre }}</h1>
-        <input [(ngModel)]="nuevoQueHacer.tarea" placeholder="¿que hay para hacer hoy?"
+        <input [(ngModel)]="nuevoQueHacer.tarea" placeholder="¿que hay para hacer hoy?" class="nuevo-quehacer"
                (keyup.enter)="agregarQueHacer()" autofocus="">
     </header>
     <section>

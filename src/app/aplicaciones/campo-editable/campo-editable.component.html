@@ -1,9 +1,10 @@
-<span *ngIf="!editar">
-    {{ original }}
+<div *ngIf="!editar" class="contenedor-flex-row">
+    <div class="contenido-flex">{{ original }}</div>
     <button (click)="editar=true">&#9997;</button>
-</span>
-<span *ngIf="editar">
-    <input [(ngModel)]="temporal" autofocus="" (keyup.enter)="cambiar()" (keyup.escape)="cancelar()"/>
+</div>
+<div *ngIf="editar" class="contenedor-flex-row">
+    <input [(ngModel)]="temporal" autofocus="" (keyup.enter)="cambiar()" (keyup.escape)="cancelar()"
+           class="contenido-flex"/>
     <button (click)="cambiar()">&#10003;</button>
     <button (click)="cancelar()">&#10005;</button>
-</span>
+</div>
